@@ -1,0 +1,11 @@
+<html>
+<form name=a>
+President: <input maxlength=15 size=15 name=p value="">
+<br>Year: <input maxlength=15 size=15 name=y value="">
+<br><input type=button onclick="location.href='pebblejs:close#'+JSON.stringify({p:document.a.p.value,y:document.a.y.value});" value=Submit>
+</form>
+<script>
+document.a.p.value=location.href.match(/p=([^&]+)&/)[1].replace(/\+/g," ");
+document.a.y.value=location.href.match(/&y=(.+)$/)[1].replace(/\+/g," ");
+</script>
+</html>

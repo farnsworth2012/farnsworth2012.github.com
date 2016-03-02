@@ -1,8 +1,10 @@
 <html>
+<head><meta name="viewport" content="width=device-width"></head>
 <form name=a>
-President: <input maxlength=15 size=15 name=p value="">
+In fairness you can specify your own presidential nominee:
+<br>President: <input maxlength=15 size=15 name=p value="">
 <br>Year: <input maxlength=15 size=15 name=y value="">
-<br><input type=button onclick="location.href='pebblejs:close#'+JSON.stringify({p:document.a.p.value,y:document.a.y.value});" value=Submit>
+<br><input type=button onclick="location.href='pebblejs://close#'+JSON.stringify({p:document.a.p.value,y:document.a.y.value});" value=Submit>
 </form>
 <script>
 document.a.p.value=location.href.match(/p=([^&]+)&/)[1].replace(/\+/g," ");
